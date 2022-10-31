@@ -1,0 +1,40 @@
+#educacionctn {
+  padding: 2%;
+  margin: 0% 0%;
+  width: 100%;
+}
+
+.container-lg {
+  padding-bottom: 1%;
+
+  text-align: -webkit-center;
+}
+
+#media-title {
+  margin: 1rem 0.2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+  margin: 1rem 0.2rem;
+}
+
+h4 {
+  width: 100%;
+}
+
+.btn-group {
+  opacity: 0.3;
+}
+
+#imgmedia {
+  max-width: 96px;
+  min-width: 32px;
+}
+
+.media {
+  border: 1px solid rgba(147, 164, 164, 0.2);
+  border-radius: 7px;
+  background: white;
+  padding: 1%;
+}

@@ -1,0 +1,48 @@
+<div class="" id="proyectosctn">
+  <div class="container-lg">
+    <h4>Trabajos | Proyectos</h4>
+    <button
+      class="btn btn-outline-warning btn-sm"
+      type="button"
+      routerLink="/nuevoproj/"
+      *ngIf="isLogged"
+    >
+      Crear
+    </button>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4" id="cardgroup">
+    <div class="col" *ngFor="let Proyectos of proj">
+      <div class="card">
+        <img src="{{ Proyectos.imgP }}" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ Proyectos.nombreP }}</h5>
+          <p class="card-text">
+            {{ Proyectos.descripcionP }}
+          </p>
+        </div>
+        <div
+          class="btn-group btn-group-sm mx-auto"
+          role="group"
+          aria-label="Modificar"
+        >
+          <button
+            type="button"
+            class="btn btn-outline-dark"
+            routerLink="/editproj"
+            *ngIf="isLogged"
+          >
+            <i class="bi bi-pencil"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-dark"
+            *ngIf="isLogged"
+            (click)="borrar(Proyectos.id)"
+          >
+            <i class="bi bi-trash3"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

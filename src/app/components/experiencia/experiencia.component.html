@@ -1,0 +1,49 @@
+<div class="" id="experienciactn">
+  <div class="container-lg">
+    <h4>Trabajos destacados | Experiencia Laboral</h4>
+    <button
+      class="btn btn-outline-warning btn-sm"
+      type="button"
+      routerLink="/nuevaexp"
+      *ngIf="isLogged"
+    >
+      Crear
+    </button>
+  </div>
+  <div id="cardctn">
+    <div class="card-group">
+      <div class="card" *ngFor="let Experiencia of expe">
+        <img src="{{ Experiencia.imgE }}" class="card-img-top" />
+        <div class="card-body">
+          <h6 class="card-title" id="card-title">{{ Experiencia.nombreE }}</h6>
+          <p class="card-text" id="card-text">
+            {{ Experiencia.descripcionE }}
+          </p>
+
+          <div
+            class="btn-group btn-group-sm mx-auto"
+            role="group"
+            aria-label="Modificar"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              routerLink="/editexp/{{ Experiencia.id }}/"
+              *ngIf="isLogged"
+            >
+              <i class="bi bi-pencil"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              *ngIf="isLogged"
+              (click)="deleteExp(Experiencia.id)"
+            >
+              <i class="bi bi-trash3"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
