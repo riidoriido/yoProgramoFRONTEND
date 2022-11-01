@@ -28,6 +28,10 @@ import { NewEducacionComponent } from './components/educacion/new-educacion.comp
 import { EditEducacionComponent } from './components/educacion/edit-educacion.component';
 import { NewProjectoComponent } from './components/projects/new-projecto.component';
 import { EditProjectoComponent } from './components/projects/edit-projecto.component';
+import { EditPersonaComponent } from './components/bio/edit-persona.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -51,6 +55,7 @@ import { EditProjectoComponent } from './components/projects/edit-projecto.compo
     EditEducacionComponent,
     NewProjectoComponent,
     EditProjectoComponent,
+    EditPersonaComponent,
   ],
   imports: [
     FormsModule,
@@ -60,6 +65,8 @@ import { EditProjectoComponent } from './components/projects/edit-projecto.compo
       showSubtitle: true,
     }),
     HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
   ],
   providers: [CargaJsService, interceptorProvider],
   bootstrap: [AppComponent],

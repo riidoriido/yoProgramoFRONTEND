@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/service/persona.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-bio',
@@ -8,12 +9,26 @@ import { PersonaService } from 'src/app/service/persona.service';
   styleUrls: ['./bio.component.css'],
 })
 export class BioComponent implements OnInit {
-  persona: persona = new persona('', '', '', '');
+  persona: persona = null;
 
-  constructor(public personaService: PersonaService) {}
+  constructor(
+    private personaService: PersonaService,
+    private tokenService: TokenService
+  ) {}
+
+  isLogged = false;
 
   ngOnInit(): void {
-    this.personaService.getPersona().subscribe((data) => {
+    this.cargarPersona();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
+
+  cargarPersona(): void {
+    this.personaService.details(1).subscribe((data) => {
       this.persona = data;
     });
   }

@@ -1,9 +1,9 @@
 //storage
-const misEventos = JSON.parse(localStorage.getItem("misJSON")) || [];
-let saveToLocalStorage = () => {
-  let storageJSON = JSON.stringify(misEventos);
-  localStorage.setItem("eventosGuardadosJSON", storageJSON);
-};
+const misEventos = [];
+// let saveToLocalStorage = () => {
+//   let storageJSON = JSON.stringify(misEventos);
+//   localStorage.setItem("eventosGuardadosJSON", storageJSON);
+// };
 
 //listado
 const listaServicios = [

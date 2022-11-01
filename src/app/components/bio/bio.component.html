@@ -2,6 +2,14 @@
   <div class="fotoctn" id="fotoctn">
     <img src="{{ persona.img }}" alt="Fermin Vazquez" />
   </div>
+  <button
+    class="btn btn-outline-warning btn-sm"
+    type="button"
+    routerLink="/editbio"
+    *ngIf="isLogged"
+  >
+    Crear
+  </button>
   <div class="biotextoctn">
     <h1>{{ persona.nombre }} {{ persona.apellido }}</h1>
     <p class="bio-p">{{ persona.bio }}</p>

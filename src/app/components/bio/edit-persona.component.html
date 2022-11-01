@@ -1,0 +1,60 @@
+<div class="container" id="editBioctn">
+  <div class="row">
+    <div>
+      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <div class="form-group green-border-focus">
+          <label for="editBio">Editar persona</label>
+          <textarea
+            class="form-control"
+            id="nombre"
+            rows="3"
+            placeholder="Título"
+            name="nombre"
+            [(ngModel)]="persona.nombre"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group green-border-focus">
+          <textarea
+            class="form-control"
+            id="apellido"
+            rows="3"
+            placeholder="Apellido"
+            name="apellido"
+            [(ngModel)]="persona.apellido"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group green-border-focus">
+          <textarea
+            class="form-control"
+            id="bio"
+            rows="3"
+            placeholder="Descripción"
+            name="bio"
+            [(ngModel)]="persona.bio"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group green-border-focus">
+          <input
+            class="form-control"
+            type="file"
+            id="img"
+            placeholder="Elegir imagen"
+            name="img"
+            [(ngModel)]="persona.img"
+            (change)="uploadImg($event)"
+            accept=".jpg, .jpeg, .png"
+          />
+          <div class="imgPreview">
+            <img [src]="imageService.url" width="96px" />
+          </div>
+        </div>
+        <div class="d-grid">
+          <button class="btn btn-dark">Actualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
