@@ -23,6 +23,12 @@
   line-height: 1.7;
 }
 
+#bioctn {
+  margin: 0% 0%;
+  width: 100%;
+  text-align: -webkit-center;
+}
+
 .biotextoctn {
   width: 80%;
 }

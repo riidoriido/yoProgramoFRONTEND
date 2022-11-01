@@ -2,16 +2,17 @@
   <div class="fotoctn" id="fotoctn">
     <img src="{{ persona.img }}" alt="Fermin Vazquez" />
   </div>
-  <button
-    class="btn btn-outline-warning btn-sm"
-    type="button"
-    routerLink="/editbio"
-    *ngIf="isLogged"
-  >
-    Crear
-  </button>
-  <div class="biotextoctn">
+
+  <div class="container-lg biotextoctn" id="bioctn">
     <h1>{{ persona.nombre }} {{ persona.apellido }}</h1>
+    <button
+      class="btn btn-outline-warning btn-sm"
+      type="button"
+      routerLink="/editbio/1"
+      *ngIf="isLogged"
+    >
+      Editar
+    </button>
     <p class="bio-p">{{ persona.bio }}</p>
   </div>
 </div>
