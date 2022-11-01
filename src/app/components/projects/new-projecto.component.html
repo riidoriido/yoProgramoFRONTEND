@@ -3,13 +3,13 @@
     <div>
       <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
         <div class="form-group green-border-focus">
-          <label for="nuevaEducacion">Cargar nuevo proyecto</label>
+          <label for="newProjecto">Cargar nuevo proyecto</label>
           <textarea
             class="form-control"
             id="nombreP"
             rows="1"
             placeholder="Título"
-            name="nombreE"
+            name="nombreP"
             [(ngModel)]="nombreP"
             required
           ></textarea>
@@ -20,7 +20,7 @@
             id="descripcionP"
             rows="3"
             placeholder="Descripción"
-            name="descripcionE"
+            name="descripcionP"
             [(ngModel)]="descripcionP"
             required
           ></textarea>
@@ -30,7 +30,7 @@
               id="imgP"
               rows="1"
               placeholder="URL de la imagen"
-              name="imgE"
+              name="imgP"
               [(ngModel)]="imgP"
               required
             ></textarea>

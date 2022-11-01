@@ -11,3 +11,13 @@
     height: 100%;
   }
 }
+
+.form-outline .form-control.form-control-l {
+  background-color: white;
+  border: 1px solid rgb(190, 189, 189);
+}
+
+input {
+  background-color: white;
+  border: 1px solid rgb(190, 189, 189);
+}

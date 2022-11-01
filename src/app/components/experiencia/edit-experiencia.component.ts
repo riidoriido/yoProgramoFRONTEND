@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia';
+import { ImageService } from 'src/app/service/image.service';
 import { SExperienciaService } from 'src/app/service/s-experiencia.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class EditExperienciaComponent implements OnInit {
   constructor(
     private sExperiencia: SExperienciaService,
     private activatedRouter: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public imageService: ImageService
   ) {}
 
   ngOnInit(): void {
@@ -31,6 +33,7 @@ export class EditExperienciaComponent implements OnInit {
   }
 
   onUpdate(): void {
+    this.expLab.imgE = this.imageService.url;
     const id = this.activatedRouter.snapshot.params['id'];
     this.sExperiencia.update(id, this.expLab).subscribe(
       (data) => {
@@ -41,5 +44,11 @@ export class EditExperienciaComponent implements OnInit {
         this.router.navigate(['']);
       }
     );
+  }
+
+  uploadImg($event: any) {
+    const id = this.activatedRouter.snapshot.params['id'];
+    const name = 'expimg_' + id;
+    this.imageService.uploadExpImg($event, name);
   }
 }
