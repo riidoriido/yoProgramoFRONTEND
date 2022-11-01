@@ -4,14 +4,14 @@
     <button
       class="btn btn-outline-warning btn-sm"
       type="button"
-      routerLink="/nuevoproj/"
+      routerLink="/nuevoproj"
       *ngIf="isLogged"
     >
       Crear
     </button>
   </div>
   <div class="row row-cols-1 row-cols-md-2 g-4" id="cardgroup">
-    <div class="col" *ngFor="let Proyectos of proj">
+    <div class="col" *ngFor="let Proyectos of proyectos">
       <div class="card">
         <img src="{{ Proyectos.imgP }}" class="card-img-top" />
         <div class="card-body">

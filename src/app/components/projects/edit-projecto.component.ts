@@ -20,7 +20,6 @@ export class EditProjectoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.proj.imgP = this.imageService.url;
     const id = this.activatedRouter.snapshot.params['id'];
     this.proyectosS.details(id).subscribe(
       (data) => {
@@ -34,6 +33,7 @@ export class EditProjectoComponent implements OnInit {
   }
 
   onUpdate(): void {
+    this.proj.imgP = this.imageService.url;
     const id = this.activatedRouter.snapshot.params['id'];
     this.proyectosS.update(id, this.proj).subscribe(
       (data) => {
