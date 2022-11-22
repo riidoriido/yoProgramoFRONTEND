@@ -1,69 +1,48 @@
-<h5>Hard & Soft Skills</h5>
+<div id="hyssctn">
+  <h5>Hard & Soft Skills</h5>
+  <div>
+    <button
+      class="btn btn-outline-warning btn-sm"
+      type="button"
+      routerLink="/newskill"
+      *ngIf="isLogged"
+    >
+      Crear
+    </button>
+  </div>
+  <div class="circle" *ngFor="let skill of skill">
+    <circle-progress
+      [percent]="skill.porcentaje"
+      [radius]="75"
+      [title]="skill.nombre"
+      [outerStrokeWidth]="8"
+      [innerStrokeWidth]="4"
+      [outerStrokeColor]="'#78C000'"
+      [innerStrokeColor]="'#C7E596'"
+      [animation]="false"
+    ></circle-progress>
 
-<div id="hyss">
-  <div class="circle">
-    <circle-progress
-      [percent]="85"
-      [radius]="75"
-      [outerStrokeWidth]="8"
-      [innerStrokeWidth]="4"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
-      [animation]="true"
-      [animationDuration]="600"
-      subtitle="eventos"
-    ></circle-progress>
-  </div>
-  <div class="circle">
-    <circle-progress
-      [percent]="50"
-      [radius]="75"
-      [outerStrokeWidth]="8"
-      [innerStrokeWidth]="4"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
-      [animation]="true"
-      [animationDuration]="250"
-      subtitle="estudio"
-    ></circle-progress>
-  </div>
-  <div class="circle">
-    <circle-progress
-      [percent]="35"
-      [radius]="75"
-      [outerStrokeWidth]="8"
-      [innerStrokeWidth]="4"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
-      [animation]="true"
-      [animationDuration]="300"
-      subtitle="deportes"
-    ></circle-progress>
-  </div>
-  <div class="circle">
-    <circle-progress
-      [percent]="98"
-      [radius]="75"
-      [outerStrokeWidth]="8"
-      [innerStrokeWidth]="4"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
-      [animation]="true"
-      [animationDuration]="400"
-      subtitle="retoque digital"
-    ></circle-progress>
-  </div>
-  <div class="circle">
-    <circle-progress
-      [percent]="68"
-      [radius]="75"
-      [outerStrokeWidth]="8"
-      [innerStrokeWidth]="4"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
-      [animation]="true"
-      [animationDuration]="800"
-      subtitle="fotoperiodismo"
-    ></circle-progress>
+    <div
+      class="btn-group btn-group-sm mx-auto"
+      role="group"
+      aria-label="Modificar"
+    >
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        routerLink="/edithys/{{ skill.id }}/"
+        *ngIf="isLogged"
+      >
+        <i class="bi bi-pencil"></i>
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        *ngIf="isLogged"
+        (click)="delete(skill.id)"
+      >
+        <i class="bi bi-trash3"></i>
+      </button>
+    </div>
   </div>
 </div>
