@@ -4,10 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BioComponent } from './components/bio/bio.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
-// import { NavbarComponent } from './components/navbar/navbar.component';
-// import { FooterComponent } from './components/footer/footer.component';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { SkillsComponent } from './components/skills/skills.component';
 import { LoginComponent } from './components/login/login.component';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
@@ -18,6 +15,9 @@ import { NewProjectoComponent } from './components/projects/new-projecto.compone
 import { EditProjectoComponent } from './components/projects/edit-projecto.component';
 import { PresupuestoComponent } from './components/presupuesto/presupuesto.component';
 import { EditPersonaComponent } from './components/bio/edit-persona.component';
+import { HyssComponent } from './components/hyss/hyss.component';
+import { NewHyssComponent } from './components/hyss/new-hyss.component';
+import { EditHyssComponent } from './components/hyss/edit-hyss.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'bio', component: BioComponent },
   { path: 'experiencia', component: ExperienciaComponent },
   { path: 'projects', component: ProjectsComponent },
-  { path: 'skills', component: SkillsComponent },
+  { path: 'hyss', component: HyssComponent },
   { path: 'nuevaexp', component: NewExperienciaComponent },
   { path: 'editexp/:id', component: EditExperienciaComponent },
   { path: 'educacion', component: EducacionComponent },
@@ -37,6 +37,8 @@ const routes: Routes = [
   { path: 'editproj/:id', component: EditProjectoComponent },
   { path: 'presupuesto', component: PresupuestoComponent },
   { path: 'editbio/:id', component: EditPersonaComponent },
+  { path: 'newskill', component: NewHyssComponent },
+  { path: 'editskill/:id', component: EditHyssComponent },
 ];
 
 @NgModule({
